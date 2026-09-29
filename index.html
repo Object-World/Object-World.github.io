@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ObjectWorld scales object-centric world modeling with a 1,210.1-hour dataset of dense 3D full-object flow.">
+  <meta name="theme-color" content="#071219">
+  <title>ObjectWorld — 3D Full-Object Flow</title>
+  <link rel="icon" type="image/png" href="static/images/icon-transparent-tight.png?v=anon-1">
+  <link rel="stylesheet" href="static/css/style.css?v=anon-1">
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#top" aria-label="ObjectWorld home"><span>O</span> ObjectWorld</a>
+      <div class="nav-links"><a href="#overview">Overview</a><a href="#explorer">3D Explorer</a><a href="#results">Results</a></div>
+    </nav>
+    <div class="hero-content shell">
+      <h1>ObjectWorld: Scaling Object-Centric World Models with a Large-Scale 3D Full-Object Flow Dataset</h1>
+      <p class="hero-lede">From diverse, uncalibrated videos to dense motion over complete object surfaces—and from predicted motion to executable robot trajectories.</p>
+      <div class="hero-actions"><a class="button primary" href="#explorer">Explore the data <span aria-hidden="true">↓</span></a><a class="button" href="static/paper.pdf" target="_blank" rel="noopener">Paper (PDF)</a></div>
+    </div>
+  </header>
+  <main>
+    <section class="section video-section" aria-labelledby="video-title"><div class="shell"><p class="kicker">Supplementary video</p><h2 id="video-title">Video overview</h2><video class="supp-video" controls playsinline preload="metadata"><source src="static/videos/ObjectWorld_supp_web.mp4" type="video/mp4">Your browser does not support embedded video.</video></div></section>
+    <section class="section light" id="overview">
+      <div class="shell narrow intro"><p class="kicker">The idea</p><h2>A complete motion interface between perception and action</h2><p class="lead">ObjectWorld predicts dense trajectories over an object's complete surface, including regions hidden in the input view. The representation captures both rigid motion and non-rigid deformation while remaining independent of a particular robot embodiment.</p></div>
+      <figure class="wide-figure teaser-figure shell"><img src="static/images/teaser.png" alt="ObjectWorld overview: dataset, object-centric world model, and real-world execution"><figcaption>ObjectWorld learns executable full-object flow from large-scale real-world and simulated manipulation data.</figcaption></figure>
+      <div class="stat-grid shell" aria-label="Dataset statistics"><article><strong>1,210.1</strong><span>hours of 3D full-object flow</span></article><article><strong>755.6</strong><span>hours of real-world video</span></article><article><strong>454.5</strong><span>hours of simulation</span></article><article><strong>488K+</strong><span>trajectories and clips</span></article></div>
+    </section>
+    <section class="section dark" id="explorer">
+      <div class="shell section-heading inverse"><div><p class="kicker">Interactive dataset</p><h2>Rotate the world. Follow the flow.</h2></div><p>Explore 28 curated examples: 12 captured from real-world videos and 16 generated in simulation. Drag to rotate 360°, scroll to zoom, and scrub through time.</p></div>
+      <div class="scene-gallery shell" data-scene-gallery aria-label="Choose a scene"></div>
+      <div class="viewer shell" data-point-flow-viewer>
+        <div class="viewer-toolbar"><label class="scene-picker"><span>Scene</span><select data-scene aria-label="Choose a 3D scene"></select></label><div class="viewer-actions"><button type="button" data-play>Pause</button><button type="button" data-reset>Reset view</button><label><input type="checkbox" data-scene-toggle checked> Context</label><label><input type="checkbox" data-trails-toggle checked> Trails</label></div></div>
+        <div class="viewer-stage"><div class="canvas-wrap"><canvas aria-label="Interactive rotating 3D point cloud and full-object flow"></canvas><div class="viewer-status" data-status>Loading scene index…</div><div class="viewer-hint"><span class="mouse-icon">↔</span> drag · rotate &nbsp;&nbsp; scroll · zoom</div></div><aside class="source-video"><span>Original video</span><video data-source-video muted playsinline preload="metadata"></video><p class="dataset-description" data-dataset-description aria-live="polite"></p></aside></div>
+        <div class="timeline"><span>t<sub>0</sub></span><input type="range" min="0" max="1" value="0" step="1" data-frame aria-label="Flow frame"><span data-frame-label>00 / 00</span></div>
+      </div>
+      <div class="legend shell"><span><i class="dot context"></i> RGB scene</span><span><i class="dot object"></i> full-object surface</span><span><i class="line flow"></i> pink → blue flow history</span><span><i class="camera-key"></i> camera pose</span></div>
+    </section>
+    <section class="section paper-section"><div class="shell narrow intro"><p class="kicker">Data at scale</p><h2>One pipeline, heterogeneous motion</h2><p class="lead">The automatic annotation pipeline turns in-the-wild manipulation videos into complete 3D object trajectories without requiring robot actions, calibrated cameras, depth measurements, or pre-scanned object meshes.</p></div><figure class="wide-figure pipeline-figure shell"><img src="static/images/data-pipeline.png" alt="Automatic full-object flow annotation pipeline"><figcaption>Automatic annotation from raw video to full-object flow.</figcaption></figure></section>
+    <section class="section mist"><div class="shell split reverse"><figure class="card-figure"><img src="static/images/model-pipeline.png" alt="Object-centric world model architecture"><figcaption>Task-conditioned generative prediction over complete object geometry.</figcaption></figure><div class="copy"><p class="kicker">Object-centric prediction</p><h2>See the task. Reconstruct the object. Predict its future.</h2><p>The model combines task-conditioned visual-language features with a joint 3D encoding of object and scene geometry. It generates 48 future frames for 512 sampled object points in a single dense trajectory.</p><div class="mini-stats"><div><strong>512</strong><span>surface points</span></div><div><strong>48</strong><span>future frames</span></div><div><strong>3D</strong><span>dense trajectories</span></div></div></div></div></section>
+    <section class="section results" id="results">
+      <div class="shell section-heading"><div><p class="kicker">Key results</p><h2>Better flow, stronger execution</h2></div><p>ObjectWorld improves dense flow prediction and transfers the resulting motion target across scenes, environments, and robot embodiments.</p></div>
+      <div class="result-grid shell"><article class="metric-card feature"><span class="metric-label">All-frame flow error</span><strong><span>6.22</span><small class="unit">cm</small></strong><p>versus 10.24 cm for the strongest reported baseline.</p><div class="bar"><i style="width:61%"></i></div><span class="bar-note">61.0% within 5 cm</span></article><article class="metric-card"><span class="metric-label">Simulation execution</span><strong><span>29</span><small class="fraction">/ 30</small></strong><p>successful trials across in-domain and held-out environments.</p></article><article class="metric-card"><span class="metric-label">Real-world execution</span><strong><span>13</span><small class="fraction">/ 15</small></strong><p>successful trials, compared with 10/15 for the flow baseline.</p></article><article class="metric-card"><span class="metric-label">Annotation precision</span><strong><span>93.3</span><small class="unit">%</small></strong><p>for the high-quality automatic filtering gate.</p></article></div>
+      <div class="evidence-figures shell"><figure class="confusion-figure"><img src="static/images/confusion-matrix.png" alt="Complete confusion matrices for the annotation filtering gates"><figcaption>Expert validation of the Golden and Silver annotation-filtering gates.</figcaption></figure><figure class="scaling-figure"><img src="static/images/data-scaling.png" alt="Data scaling results for simulated and real data"><figcaption>Combining real and simulated data performs best.</figcaption></figure></div>
+    </section>
+    <section class="section execution-section" aria-labelledby="execution-title">
+      <div class="shell section-heading"><div><p class="kicker">Execution visualization</p><h2 id="execution-title">From predicted flow to robot motion</h2></div><p>Compare the predicted 3D full-object flow with the synchronized rollout. Examples span real-robot executions, LIBERO, and ManiSkill.</p></div>
+      <div class="scene-gallery execution-gallery shell" data-execution-gallery aria-label="Choose an execution"></div>
+      <div class="viewer shell" data-point-flow-viewer data-manifest="static/data/execution-manifest.json" data-gallery="[data-execution-gallery]" data-timeline-frames="60">
+        <div class="viewer-toolbar"><label class="scene-picker"><span>Execution</span><select data-scene aria-label="Choose an execution"></select></label><div class="viewer-actions"><button type="button" data-play>Pause</button><button type="button" data-reset>Reset view</button><label><input type="checkbox" data-scene-toggle checked> Context</label><label><input type="checkbox" data-trails-toggle checked> Trails</label></div></div>
+        <div class="viewer-stage"><div class="canvas-wrap"><canvas aria-label="Interactive 3D object flow and scene point cloud"></canvas><div class="viewer-status" data-status>Loading execution index…</div><div class="viewer-hint"><span class="mouse-icon">↔</span> drag · rotate &nbsp;&nbsp; scroll · zoom</div></div><aside class="source-video"><span>Execution video</span><video data-source-video muted playsinline preload="metadata"></video><p class="execution-instruction" data-execution-instruction aria-live="polite"></p></aside></div>
+        <div class="timeline"><span>t<sub>0</sub></span><input type="range" min="0" max="1" value="0" step="1" data-frame aria-label="Execution timeline"><span data-frame-label>00 / 00</span></div>
+      </div>
+      <div class="legend shell"><span><i class="dot context"></i> RGB scene</span><span><i class="dot object"></i> object surface</span><span><i class="line flow"></i> pink → blue flow history</span><span><i class="camera-key"></i> camera pose</span><span>Flow completes at 48 / 60</span></div>
+    </section>
+  </main>
+  <footer><div class="shell"><span class="wordmark"><span>O</span> ObjectWorld</span></div></footer>
+  <script src="static/js/point-flow-viewer.js?v=anon-1" defer></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "groups": {
+    "real": "REAL ROBOT",
+    "libero": "LIBERO",
+    "maniskill": "MANISKILL"
+  },
+  "scenes": [
+    {
+      "id": "teapot",
+      "label": "Prepare the teapot",
+      "description": "Prepare the teapot",
+      "instruction": "Pour the water from the teapot to the cup.",
+      "source": "Real robot",
+      "split": "real",
+      "file": "static/data/executions/teapot.json",
+      "video": "static/videos/executions/teapot.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/teapot.jpg"
+    },
+    {
+      "id": "flashlight",
+      "label": "Move the flashlight",
+      "description": "Move the flashlight",
+      "instruction": "Put the pink flashlight into the box.",
+      "source": "Real robot",
+      "split": "real",
+      "file": "static/data/executions/flashlight.json",
+      "video": "static/videos/executions/flashlight.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/flashlight.jpg"
+    },
+    {
+      "id": "banana",
+      "label": "Pick and place the banana",
+      "description": "Pick and place the banana",
+      "instruction": "Place the banana into the red bowl.",
+      "source": "Real robot",
+      "split": "real",
+      "file": "static/data/executions/banana.json",
+      "video": "static/videos/executions/banana.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/banana.jpg"
+    },
+    {
+      "id": "libero-insert",
+      "label": "Insert the object",
+      "description": "Insert the object",
+      "instruction": "Put the cream cheese into the bowl",
+      "source": "LIBERO",
+      "split": "libero",
+      "file": "static/data/executions/libero-insert.json",
+      "video": "static/videos/executions/libero-insert.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/libero-insert.jpg"
+    },
+    {
+      "id": "libero-stack",
+      "label": "Stack and arrange",
+      "description": "Stack and arrange",
+      "instruction": "Place the wine bottle on top of the cabinet",
+      "source": "LIBERO",
+      "split": "libero",
+      "file": "static/data/executions/libero-stack.json",
+      "video": "static/videos/executions/libero-stack.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/libero-stack.jpg"
+    },
+    {
+      "id": "libero-pick-place",
+      "label": "Pick and place",
+      "description": "Pick and place",
+      "instruction": "Put the bowl on the plate",
+      "source": "LIBERO",
+      "split": "libero",
+      "file": "static/data/executions/libero-pick-place.json",
+      "video": "static/videos/executions/libero-pick-place.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/libero-pick-place.jpg"
+    },
+    {
+      "id": "maniskill-stack-cube",
+      "label": "Stack Cube",
+      "description": "Stack Cube",
+      "instruction": "Pick up the red cube and stack on green cube, target object is red cube.",
+      "source": "ManiSkill",
+      "split": "maniskill",
+      "file": "static/data/executions/maniskill-stack-cube.json",
+      "video": "static/videos/executions/maniskill-stack-cube.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/maniskill-stack-cube.jpg"
+    },
+    {
+      "id": "maniskill-place-sphere",
+      "label": "Place Sphere",
+      "description": "Place Sphere",
+      "instruction": "Pick up the sphere and place it in the container",
+      "source": "ManiSkill",
+      "split": "maniskill",
+      "file": "static/data/executions/maniskill-place-sphere.json",
+      "video": "static/videos/executions/maniskill-place-sphere.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/maniskill-place-sphere.jpg"
+    },
+    {
+      "id": "maniskill-push-cube",
+      "label": "Push Cube",
+      "description": "Push Cube",
+      "instruction": "Push the cube to the red white circle position",
+      "source": "ManiSkill",
+      "split": "maniskill",
+      "file": "static/data/executions/maniskill-push-cube.json",
+      "video": "static/videos/executions/maniskill-push-cube.mp4?v=anon-1",
+      "thumbnail": "static/images/executions/maniskill-push-cube.jpg"
+    }
+  ]
+}
